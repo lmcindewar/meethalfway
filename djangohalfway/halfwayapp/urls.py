@@ -21,6 +21,6 @@ from . import views
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
     url(r'home', views.home, name='home'),
-    url(r'^respond', views.home, name = 'respond')
+    url(r'^respond', views.second, name = 'respond')
 ]
 # urlpatterns += staticfiles_urlpatterns()
