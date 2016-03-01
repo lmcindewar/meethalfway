@@ -38,6 +38,9 @@ class Meeting(models.Model):
     trip_id = models.CharField(max_length = 100 , null=True, blank = True)
     destination = models.ForeignKey(Address, null=True, blank = True)
 
+    def set_participant_two(self, participant):
+        self.participant_two = participant
+
     def get_id(self):
         return self.id
 

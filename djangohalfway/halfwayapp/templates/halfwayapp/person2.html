@@ -1,3 +1,22 @@
+{% extends "halfwayapp/base.html" %}
+
+{% block content %}
+<div class = "container">
+    <div class="row">
+    <h1>Your friend has already submitted their address. <small>Enter your starting point below.</small></h1>
+</div>
+</div>
+<div class="container">
+<div class="row">
+    <form method="post" class="form-horizontal">
+    {% csrf_token %}
+    <table class="table-condensed">
+    {% for form in forms %}
+        {{ form }}
+    {% endfor %}
+    </table>
+    <input type="submit" name="PersonB_submit" value="Submit Address" class="btn btn-success"/>
+</form>
 <h1> Your Response has been recorded</h1>
-<p> Please send your friend this code {{uniq}}</p>
-<p>  Once your friend has filled out their form, you can view the results here using the same code </p>
+<p> Remember you this code {{ uniq }}, in case you need to look up your results.</p>
+{% endblock %}
